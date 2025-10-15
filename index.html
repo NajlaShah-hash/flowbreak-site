@@ -8,7 +8,8 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%23A78BFA'/%3E%3Cstop offset='1' stop-color='%23FDE68A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='24' fill='url(%23g)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='64' font-family='Arial, Helvetica, sans-serif' fill='%23000'%3E%F0%9F%95%8B%3C/text%3E%3C/svg%3E" />
   <meta property="og:title" content="FlowBreak – Refresh, Recharge, Refocus" />
   <meta property="og:description" content="Guided micro-breaks, stretches, mindfulness & progress tracking for busy professionals." />
-  <meta property="og:image" content="https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&crop=faces,edges" />
+  <!-- Hero image: free stock photo of employee using a mobile app during a break -->
+  <meta property="og:image" content="https://images.pexels.com/photos/3779701/pexels-photo-3779701.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&crop=faces,edges" />
 
   <style>
     :root{
@@ -19,7 +20,6 @@
       --brandA: #7cb342;
       --brandB: #a3c9a8;
       --brandC: #d9b382;
-      --ok: #8fb996;
       --warn: #e6c177;
     }
     * { box-sizing: border-box; }
@@ -51,11 +51,6 @@
 
     .art{ background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75)); border:1px solid rgba(95,107,99,.20); border-radius:20px; padding:18px; box-shadow:0 20px 50px rgba(0,0,0,.08); }
     .art figcaption{ color: var(--muted); font-size:.9rem; margin-top:10px; }
-
-    .dual-images { display: flex; flex-direction: column; gap:16px; }
-    @media (min-width: 900px){
-      .dual-images { flex-direction: column; }
-    }
     .hero-img{ width:100%; height:auto; display:block; border-radius:14px; object-fit:cover; }
 
     section{ padding: 60px 0; }
@@ -90,6 +85,7 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <div class="container hero" id="lead">
     <div>
       <div class="kicker">Refresh • Recharge • Refocus</div>
@@ -99,18 +95,14 @@
       <a class="btn" href="#discussion">Tell us how you manage breaks</a>
     </div>
 
-    <!-- Two hero images -->
+    <!-- Single hero image -->
     <figure class="art" aria-labelledby="img-caption">
-      <div class="dual-images">
-        <img class="hero-img"
-          src="https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="Employee doing yoga pose during a work break in a modern office." loading="lazy" decoding="async" />
-
-        <img class="hero-img"
-          src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="Meditation mobile app interface showing a calm breathing session screen." loading="lazy" decoding="async" />
-      </div>
-      <figcaption id="img-caption">Mindful breaks powered by FlowBreak — combining movement and meditation for better focus and well-being.</figcaption>
+      <!-- Source: Pexels (free to use, no attribution required) -->
+      <img class="hero-img"
+        src="https://images.pexels.com/photos/3779701/pexels-photo-3779701.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Employee sitting comfortably during a break, using a meditation mobile app on their phone."
+        loading="lazy" decoding="async" />
+      <figcaption id="img-caption">An employee using the FlowBreak mobile app during a relaxing office break — promoting mindfulness and balance at work.</figcaption>
     </figure>
   </div>
 
@@ -118,14 +110,13 @@
     <div class="container grid cols-2">
       <div class="card">
         <h2>Why I built FlowBreak</h2>
-        <p>As the founder of FlowBreak, I created this solution after experiencing long, exhausting workdays that reduced my productivity and focus. I realized that short, structured breaks could transform how people work—helping them feel calmer, think more clearly, and complete meaningful work without burning out. FlowBreak is my practical toolkit for sustainable performance.</p>
-        <div class="space"></div>
+        <p>I created FlowBreak after realizing that short, structured breaks dramatically improved my focus and creativity. This app brings guided pauses, breathing exercises, and light stretches directly to your phone — helping you perform better without burnout.</p>
         <span class="badge">● Early access – Founder's story</span>
       </div>
       <div class="card">
         <h3>User testimonial</h3>
         <blockquote>
-          “I started using FlowBreak during my office hours, and I feel more alert and focused. It’s amazing how just 5 minutes of guided breaks can recharge my mind!”
+          “FlowBreak reminds me to take mindful pauses during work. Now I feel more energized and clear-headed throughout the day!”
           <footer class="small">— Sarah K., early adopter</footer>
         </blockquote>
       </div>
@@ -135,12 +126,12 @@
   <section id="features">
     <div class="container card">
       <h2>Simple, engaging, and effective</h2>
-      <p>FlowBreak offers guided micro-breaks, stretching exercises, and mindfulness prompts tailored for busy professionals. On desktop and mobile, FlowBreak provides gentle reminders to pause, breathe, and reset—so you return to your work with more energy and focus.</p>
+      <p>FlowBreak combines micro-breaks, stretching prompts, and mindfulness sessions — all in one sleek mobile app. On desktop or phone, FlowBreak helps you pause, breathe, and reset for better performance and mental clarity.</p>
       <div class="grid cols-2" style="margin-top:18px">
-        <div class="feature"><div>🕒</div><div><strong>Customizable break intervals</strong><div class="small">Pomodoro, 52/17, or fully custom.</div></div></div>
-        <div class="feature"><div>🧘</div><div><strong>Mindfulness & stretching</strong><div class="small">1–5 minute guided breathing and posture resets.</div></div></div>
-        <div class="feature"><div>📈</div><div><strong>Progress tracking</strong><div class="small">See streaks and mood trends.</div></div></div>
-        <div class="feature"><div>🔗</div><div><strong>Easy integrations</strong><div class="small">Connect Google Calendar and Teams.</div></div></div>
+        <div class="feature"><div>🕒</div><div><strong>Customizable break intervals</strong><div class="small">Choose Pomodoro, 52/17, or set your own.</div></div></div>
+        <div class="feature"><div>🧘</div><div><strong>Mindfulness guidance</strong><div class="small">1–5 minute breathing and relaxation sessions.</div></div></div>
+        <div class="feature"><div>📈</div><div><strong>Progress tracking</strong><div class="small">View streaks and mood improvements.</div></div></div>
+        <div class="feature"><div>🔗</div><div><strong>Integrations</strong><div class="small">Connect to Google Calendar, Slack, and Teams.</div></div></div>
       </div>
     </div>
   </section>
@@ -148,8 +139,7 @@
   <section id="discussion">
     <div class="container card">
       <h2>Discussion</h2>
-      <p><strong>Question:</strong> How do you manage your focus during long workdays? Would structured breaks help? Share your thoughts!</p>
-
+      <p><strong>Question:</strong> How do you manage your focus during workdays? Would an app like FlowBreak help you stay balanced?</p>
       <form id="discussion">
         <label class="small" for="name">Name (optional)</label>
         <input id="name" type="text" placeholder="Your name" />
@@ -158,7 +148,6 @@
         <button type="submit">Post comment</button>
         <span id="msg" class="small"></span>
       </form>
-
       <div class="space"></div>
       <div id="comments"></div>
     </div>
@@ -172,21 +161,21 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const form = document.querySelector('form#discussion');
-    const list = document.getElementById('comments');
-    const msg = document.getElementById('msg');
-    const STORAGE_KEY = 'flowbreak-discussion-v1';
+    const form=document.querySelector('form#discussion');
+    const list=document.getElementById('comments');
+    const msg=document.getElementById('msg');
+    const STORAGE_KEY='flowbreak-discussion-v1';
     function render(){
-      list.innerHTML = '';
-      const items = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      if(items.length === 0){ list.innerHTML = '<p class="small">No comments yet — be the first!</p>'; return; }
-      items.reverse().forEach(({name, text, ts})=>{
-        const el=document.createElement('div'); el.className='comment';
+      list.innerHTML='';
+      const items=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
+      if(items.length===0){list.innerHTML='<p class="small">No comments yet — be the first!</p>';return;}
+      items.reverse().forEach(({name,text,ts})=>{
+        const el=document.createElement('div');el.className='comment';
         el.innerHTML=`<strong>${name||'Anonymous'}</strong> <span class="small" style="opacity:.7">• ${new Date(ts).toLocaleString()}</span><div>${text.replace(/</g,'&lt;')}</div>`;
         list.appendChild(el);
       });
     }
-    form.addEventListener('submit', e=>{
+    form.addEventListener('submit',e=>{
       e.preventDefault();
       const name=document.getElementById('name').value.trim();
       const text=document.getElementById('comment').value.trim();
@@ -194,7 +183,7 @@
       const items=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
       items.push({name,text,ts:Date.now()});
       localStorage.setItem(STORAGE_KEY,JSON.stringify(items));
-      form.reset(); msg.textContent='Thanks for sharing!'; render();
+      form.reset();msg.textContent='Thanks for sharing!';render();
     });
     render();
   </script>
