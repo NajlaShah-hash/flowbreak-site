@@ -5,31 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FlowBreak – Refresh, Recharge, Refocus</title>
   <meta name="description" content="FlowBreak helps employees take short, revitalizing breaks that boost focus, creativity, and well-being. Guided micro-breaks, stretches, mindfulness & tracking." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%23A78BFA'/%3E%3Cstop offset='1' stop-color='%23FDE68A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='24' fill='url(%23g)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='64' font-family='Arial, Helvetica, sans-serif' fill='%23000'%3E%F0%9F%95%8B%3C/text%3E%3C/svg%3E" />
+
+  <!-- Social share preview -->
   <meta property="og:title" content="FlowBreak – Refresh, Recharge, Refocus" />
   <meta property="og:description" content="Guided micro-breaks, stretches, mindfulness & progress tracking for busy professionals." />
-  <!-- Hero image: free stock photo of employee using a mobile app during a break -->
-  <meta property="og:image" content="https://images.pexels.com/photos/3779701/pexels-photo-3779701.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&crop=faces,edges" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="flowbreak-hero.png" />
 
+  <!-- Natural theme styles -->
   <style>
     :root{
-      --bg: #faf8f4;
-      --card: #ffffff;
-      --muted: #5f6b63;
-      --text: #1f2d2a;
-      --brandA: #7cb342;
-      --brandB: #a3c9a8;
-      --brandC: #d9b382;
-      --warn: #e6c177;
+      --bg: #faf8f4;          /* warm paper */
+      --card: #ffffff;        /* clean card */
+      --muted: #5f6b63;       /* sage gray */
+      --text: #1f2d2a;        /* deep evergreen */
+      --brandA: #7cb342;      /* leaf green */
+      --brandB: #a3c9a8;      /* soft sage */
+      --brandC: #d9b382;      /* wheat / sand */
+      --ok: #8fb996;          /* moss */
+      --warn: #e6c177;        /* warm wheat */
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--text);
-      background: radial-gradient(800px 600px at 20% -10%, rgba(124,179,66,.15), transparent 60%),
-                  radial-gradient(800px 600px at 120% 10%, rgba(163,201,168,.18), transparent 60%),
+      background: radial-gradient(800px 600px at 20% -10%, rgba(124,179,66,.12), transparent 60%),
+                  radial-gradient(800px 600px at 120% 10%, rgba(163,201,168,.16), transparent 60%),
                   var(--bg);
       line-height: 1.6;
     }
@@ -37,37 +39,47 @@
     a:hover { text-decoration: underline; }
     .container{ width:min(1100px, 92vw); margin-inline:auto; }
 
+    /* Header */
     header{ position: sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: rgba(255,255,255,.75); border-bottom: 1px solid rgba(95,107,99,.25); }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
-    .logo{ display:flex; gap:10px; align-items:center; font-weight:700; }
+    .logo{ display:flex; gap:10px; align-items:center; font-weight:700; letter-spacing:.3px; }
     .logo-mark{ width:36px; height:36px; border-radius:10px; background: conic-gradient(from 220deg, var(--brandA), var(--brandB), var(--brandC)); display:grid; place-items:center; box-shadow: 0 10px 30px rgba(124,179,66,.25); }
-    .nav a.btn{ padding:.6rem 1rem; border-radius:12px; background:linear-gradient(135deg, var(--brandA), var(--brandB)); color:#0b1020; font-weight:700; box-shadow: 0 8px 24px rgba(167,139,250,.35); }
 
+    .nav a.btn{ padding:.6rem 1rem; border-radius:12px; background:linear-gradient(135deg, var(--brandA), var(--brandB)); color:#0b1020; font-weight:700; box-shadow: 0 8px 24px rgba(124,179,66,.25); }
+
+    /* Hero */
     .hero{ display:grid; grid-template-columns: 1.2fr 1fr; gap:40px; padding:72px 0 40px; align-items:center; }
     @media (max-width: 900px){ .hero{ grid-template-columns:1fr; padding:48px 0 20px; } }
     .kicker{ color: var(--warn); font-weight:700; text-transform: uppercase; letter-spacing:.15em; font-size:.8rem; }
     h1{ font-size: clamp(2rem, 5vw, 3.2rem); line-height:1.1; margin: .4rem 0 1rem; }
     .lead{ font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--muted); }
 
-    .art{ background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75)); border:1px solid rgba(95,107,99,.20); border-radius:20px; padding:18px; box-shadow:0 20px 50px rgba(0,0,0,.08); }
+    /* Image card */
+    .art{ background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.8)); border:1px solid rgba(95,107,99,.20); border-radius:20px; padding:18px; box-shadow:0 20px 50px rgba(0,0,0,.08); }
+    .art img{ width:100%; height:auto; border-radius:16px; object-fit:cover; display:block; }
     .art figcaption{ color: var(--muted); font-size:.9rem; margin-top:10px; }
-    .hero-img{ width:100%; height:auto; display:block; border-radius:14px; object-fit:cover; }
 
+    /* Sections */
     section{ padding: 60px 0; }
     .card{ background: var(--card); border:1px solid rgba(95,107,99,.20); border-radius:22px; padding:28px; box-shadow:0 16px 40px rgba(0,0,0,.06); }
     .grid{ display:grid; gap:22px; }
     .cols-2{ grid-template-columns:1fr 1fr; }
     @media (max-width: 860px){ .cols-2{ grid-template-columns:1fr; } }
 
-    .badge{ display:inline-flex; gap:8px; align-items:center; padding:.35rem .6rem; border-radius:999px; background: rgba(52,211,153,.12); color:#A7F3D0; border:1px solid rgba(52,211,153,.35); font-size:.85rem; }
+    .badge{ display:inline-flex; gap:8px; align-items:center; padding:.35rem .6rem; border-radius:999px; background: rgba(52,211,153,.12); color:#2a6b4e; border:1px solid rgba(52,211,153,.35); font-size:.85rem; }
     .feature{ display:flex; gap:14px; align-items:flex-start; background: rgba(124,179,66,.06); border:1px solid rgba(95,107,99,.18); padding:16px; border-radius:16px; }
+    blockquote{ margin:0; border-left:4px solid var(--brandA); padding-left:16px; color:#2d3a36; }
 
-    blockquote{ margin:0; padding:0; border-left:4px solid var(--brandA); padding-left:16px; color:#e9e9ff; }
+    /* Discussion */
     form#discussion{ display:grid; gap:12px; margin-top:14px; }
-    textarea, input, button{ padding:12px 16px; border-radius:12px; border:0; font-weight:700; cursor:pointer; }
-    textarea, input[type="text"]{ border:1px solid rgba(95,107,99,.35); background:#fff; color:var(--text); }
-    button{ background: linear-gradient(135deg, var(--brandA), var(--brandC)); color:#0b1020; box-shadow:0 10px 28px rgba(34,211,238,.35); }
+    textarea, input[type="text"], input[type="email"]{
+      padding:12px 14px; border-radius:12px; border:1px solid rgba(95,107,99,.35); background:#ffffff; color:var(--text);
+    }
+    button{
+      padding:12px 16px; border-radius:12px; border:0; font-weight:700; cursor:pointer; background: linear-gradient(135deg, var(--brandA), var(--brandB)); color:#0b1020; box-shadow:0 10px 28px rgba(124,179,66,.28);
+    }
     .comment{ background:rgba(124,179,66,.06); border:1px solid rgba(95,107,99,.18); padding:14px; border-radius:14px; }
+
     footer{ padding:40px 0; color: var(--muted); border-top:1px solid rgba(148,163,184,.15); margin-top:40px; }
     .small{ font-size:.9rem; }
     .space{ height:18px; }
@@ -76,7 +88,10 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="logo"><div class="logo-mark"><span>⏳</span></div>FlowBreak</div>
+      <div class="logo" aria-label="FlowBreak logo">
+        <div class="logo-mark" aria-hidden="true"><span>⏳</span></div>
+        <div>FlowBreak</div>
+      </div>
       <nav>
         <a href="#features" class="small" style="margin-right:14px">Features</a>
         <a href="#experience" class="small" style="margin-right:14px">Story</a>
@@ -85,69 +100,114 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Lead paragraph / Hero -->
   <div class="container hero" id="lead">
     <div>
       <div class="kicker">Refresh • Recharge • Refocus</div>
       <h1>FlowBreak – your ultimate solution for short, revitalizing work breaks</h1>
       <p class="lead">Designed to boost focus, creativity, and well-being, FlowBreak helps you maximize productivity without burnout. Get gentle reminders to pause, breathe, stretch, and return with greater clarity.</p>
       <div class="space"></div>
-      <a class="btn" href="#discussion">Tell us how you manage breaks</a>
+      <a class="btn" href="#discussion" style="display:inline-block">Tell us how you manage breaks</a>
     </div>
 
-    <!-- Single hero image -->
+    <!-- Relevant Image (your provided picture) -->
     <figure class="art" aria-labelledby="img-caption">
-      <!-- Source: Pexels (free to use, no attribution required) -->
-      <img class="hero-img"
-        src="https://images.pexels.com/photos/3779701/pexels-photo-3779701.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        alt="Employee sitting comfortably during a break, using a meditation mobile app on their phone."
-        loading="lazy" decoding="async" />
-      <figcaption id="img-caption">An employee using the FlowBreak mobile app during a relaxing office break — promoting mindfulness and balance at work.</figcaption>
+      <!-- Save your image file as: images/flowbreak-hero.png -->
+      <img src="images/flowbreak-hero.png" alt="FlowBreak app mockup displayed on phone, tablet, and laptop screens." />
+      <figcaption id="img-caption">The FlowBreak app across devices—helping employees take short, structured breaks during their workday.</figcaption>
     </figure>
   </div>
 
+  <!-- Personal Experience & Testimonial -->
   <section id="experience">
     <div class="container grid cols-2">
       <div class="card">
         <h2>Why I built FlowBreak</h2>
-        <p>I created FlowBreak after realizing that short, structured breaks dramatically improved my focus and creativity. This app brings guided pauses, breathing exercises, and light stretches directly to your phone — helping you perform better without burnout.</p>
-        <span class="badge">● Early access – Founder's story</span>
+        <p>As the founder of FlowBreak, I created this solution after experiencing long, exhausting workdays that reduced my productivity and focus. I realized that short, structured breaks could transform how people work—helping them feel calmer, think more clearly, and complete meaningful work without burning out. FlowBreak is my practical toolkit for sustainable performance.</p>
+        <div class="space"></div>
+        <span class="badge" aria-label="Early access status">● Early access – Founder's story</span>
       </div>
       <div class="card">
         <h3>User testimonial</h3>
         <blockquote>
-          “FlowBreak reminds me to take mindful pauses during work. Now I feel more energized and clear-headed throughout the day!”
-          <footer class="small">— Sarah K., early adopter</footer>
+          “I started using FlowBreak during my office hours, and I feel more alert and focused. It’s amazing how just 5 minutes of guided breaks can recharge my mind!”
+          <footer class="small" style="margin-top:8px">— Sarah K., early adopter</footer>
         </blockquote>
       </div>
     </div>
   </section>
 
+  <!-- Main Body / Features & Specs -->
   <section id="features">
     <div class="container card">
       <h2>Simple, engaging, and effective</h2>
-      <p>FlowBreak combines micro-breaks, stretching prompts, and mindfulness sessions — all in one sleek mobile app. On desktop or phone, FlowBreak helps you pause, breathe, and reset for better performance and mental clarity.</p>
+      <p>FlowBreak offers guided micro-breaks, stretching exercises, and mindfulness prompts tailored for busy professionals. On desktop and mobile, FlowBreak provides gentle reminders to pause, breathe, and reset—so you return to your work with more energy and focus. Choose preset break rhythms (Pomodoro, 52/17, ultradian) or customize intervals to match your schedule. Built-in progress tracking helps you notice patterns, maintain healthy habits, and prevent burnout over time.</p>
+
       <div class="grid cols-2" style="margin-top:18px">
-        <div class="feature"><div>🕒</div><div><strong>Customizable break intervals</strong><div class="small">Choose Pomodoro, 52/17, or set your own.</div></div></div>
-        <div class="feature"><div>🧘</div><div><strong>Mindfulness guidance</strong><div class="small">1–5 minute breathing and relaxation sessions.</div></div></div>
-        <div class="feature"><div>📈</div><div><strong>Progress tracking</strong><div class="small">View streaks and mood improvements.</div></div></div>
-        <div class="feature"><div>🔗</div><div><strong>Integrations</strong><div class="small">Connect to Google Calendar, Slack, and Teams.</div></div></div>
+        <div class="feature">
+          <div aria-hidden="true">🕒</div>
+          <div>
+            <strong>Customizable break intervals</strong>
+            <div class="small">Pomodoro, 52/17, ultradian, or fully custom—sync reminders to your calendar blocks.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <div aria-hidden="true">🧘</div>
+          <div>
+            <strong>Mindfulness & stretching</strong>
+            <div class="small">1–5 minute guided breathing, posture resets, and desk-friendly stretches.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <div aria-hidden="true">📈</div>
+          <div>
+            <strong>Progress tracking</strong>
+            <div class="small">See streaks, time saved, and mood trends to reinforce healthy routines.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <div aria-hidden="true">🔗</div>
+          <div>
+            <strong>Easy integrations</strong>
+            <div class="small">Connect Google/Outlook Calendar, Slack/Teams notifications, and task apps.</div>
+          </div>
+        </div>
       </div>
+
+      <div class="space"></div>
+      <h3>Availability & formats</h3>
+      <ul>
+        <li>Web app (all modern browsers), installable as a PWA for desktop & mobile.</li>
+        <li>iOS & Android companion apps (beta sign-up).</li>
+        <li>Chrome/Edge extension for quick-start timers and break nudges.</li>
+      </ul>
+      <h3>Privacy & data</h3>
+      <ul>
+        <li>No ads. Your data stays on your device by default; cloud sync is opt-in.</li>
+        <li>Anonymous analytics with the ability to opt-out entirely.</li>
+      </ul>
+      <h3>Contact</h3>
+      <p>For inquiries or partnership opportunities, email <a href="mailto:contact@flowbreak.com">contact@flowbreak.com</a>.</p>
     </div>
   </section>
 
+  <!-- Discussion Question & Functional Comments (stored locally) -->
   <section id="discussion">
     <div class="container card">
       <h2>Discussion</h2>
-      <p><strong>Question:</strong> How do you manage your focus during workdays? Would an app like FlowBreak help you stay balanced?</p>
-      <form id="discussion">
+      <p><strong>Question:</strong> How do you currently manage your focus and energy during long workdays? Would integrating short, structured breaks like FlowBreak improve your productivity? Share your thoughts below!</p>
+
+      <form id="discussion" aria-label="Discussion form">
         <label class="small" for="name">Name (optional)</label>
-        <input id="name" type="text" placeholder="Your name" />
+        <input id="name" name="name" type="text" placeholder="Your name" />
+
         <label class="small" for="comment">Your thoughts</label>
-        <textarea id="comment" rows="4" placeholder="Share your experience..." required></textarea>
+        <textarea id="comment" name="comment" rows="4" placeholder="Share your experience or tip..." required></textarea>
+
         <button type="submit">Post comment</button>
-        <span id="msg" class="small"></span>
+        <span id="msg" class="small" role="status" aria-live="polite"></span>
       </form>
+
       <div class="space"></div>
       <div id="comments"></div>
     </div>
@@ -155,36 +215,52 @@
 
   <footer>
     <div class="container small">
-      © <span id="year"></span> FlowBreak. Academic project demo.
+      © <span id="year"></span> FlowBreak. Made for an academic assignment. Brand names and emails are placeholders.
     </div>
   </footer>
 
   <script>
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-    const form=document.querySelector('form#discussion');
-    const list=document.getElementById('comments');
-    const msg=document.getElementById('msg');
-    const STORAGE_KEY='flowbreak-discussion-v1';
+
+    // Simple localStorage-backed comments
+    const form = document.querySelector('form#discussion');
+    const list = document.getElementById('comments');
+    const msg = document.getElementById('msg');
+    const STORAGE_KEY = 'flowbreak-discussion-v1';
+
     function render(){
-      list.innerHTML='';
-      const items=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
-      if(items.length===0){list.innerHTML='<p class="small">No comments yet — be the first!</p>';return;}
-      items.reverse().forEach(({name,text,ts})=>{
-        const el=document.createElement('div');el.className='comment';
-        el.innerHTML=`<strong>${name||'Anonymous'}</strong> <span class="small" style="opacity:.7">• ${new Date(ts).toLocaleString()}</span><div>${text.replace(/</g,'&lt;')}</div>`;
-        list.appendChild(el);
-      });
+      list.innerHTML = '';
+      const items = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      if(items.length === 0){
+        const p = document.createElement('p');
+        p.className = 'small';
+        p.textContent = 'No comments yet — be the first to share your thoughts!';
+        list.appendChild(p);
+      } else {
+        items.reverse().forEach(({name, text, ts}) => {
+          const el = document.createElement('div');
+          el.className = 'comment';
+          const when = new Date(ts).toLocaleString();
+          el.innerHTML = `<strong>${name || 'Anonymous'}</strong> <span class="small" style="opacity:.7">• ${when}</span><div>${text.replace(/</g,'&lt;')}</div>`;
+          list.appendChild(el);
+        });
+      }
     }
-    form.addEventListener('submit',e=>{
+
+    form.addEventListener('submit', (e)=>{
       e.preventDefault();
-      const name=document.getElementById('name').value.trim();
-      const text=document.getElementById('comment').value.trim();
-      if(!text){msg.textContent='Please write a comment.';return;}
-      const items=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
-      items.push({name,text,ts:Date.now()});
-      localStorage.setItem(STORAGE_KEY,JSON.stringify(items));
-      form.reset();msg.textContent='Thanks for sharing!';render();
+      const name = document.getElementById('name').value.trim();
+      const text = document.getElementById('comment').value.trim();
+      if(!text){ msg.textContent = 'Please write a comment before posting.'; return; }
+      const items = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      items.push({ name, text, ts: Date.now() });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      form.reset();
+      msg.textContent = 'Thanks for sharing! Your comment has been posted (saved on this device).';
+      render();
     });
+
     render();
   </script>
 </body>
