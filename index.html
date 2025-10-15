@@ -12,24 +12,23 @@
   <meta property="og:image" content="https://dummyimage.com/1200x630/edf2f7/111827.png&text=FlowBreak" />
   <style>
     :root{
-      --bg: #faf8f4;          /* warm paper */
-      --card: #ffffff;        /* clean card */
-      --muted: #5f6b63;       /* sage gray */
-      --text: #1f2d2a;        /* deep evergreen */
-      --brandA: #7cb342;      /* leaf green */
-      --brandB: #a3c9a8;      /* soft sage */
-      --brandC: #d9b382;      /* wheat / sand */
-      --ok: #8fb996;          /* moss */
-      --warn: #e6c177;        /* warm wheat */
+      --bg: #0f172a;          /* slate-900 */
+      --card: #111827;        /* gray-900 */
+      --muted: #94a3b8;       /* slate-400 */
+      --text: #e5e7eb;        /* gray-200 */
+      --brandA: #a78bfa;      /* violet-400 */
+      --brandB: #f472b6;      /* pink-400 */
+      --brandC: #22d3ee;      /* cyan-400 */
+      --ok: #34d399;          /* emerald-400 */
+      --warn: #fde68a;        /* amber-200 */
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body{
       margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
-      background: radial-gradient(800px 600px at 20% -10%, rgba(124,179,66,.15), transparent 60%),
-                  radial-gradient(800px 600px at 120% 10%, rgba(163,201,168,.18), transparent 60%),
-                  var(--bg);
+      color: var(--text); background: radial-gradient(1200px 1200px at 10% -10%, rgba(167,139,250,.15), transparent 60%),
+                              radial-gradient(1000px 800px at 120% 10%, rgba(34,211,238,.12), transparent 60%),
+                              var(--bg);
       line-height: 1.6;
     }
     a { color: var(--brandC); text-decoration: none; }
@@ -37,10 +36,10 @@
     .container{ width:min(1100px, 92vw); margin-inline:auto; }
 
     /* Header */
-    header{ position: sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: rgba(255,255,255,.75); border-bottom: 1px solid rgba(95,107,99,.25); }
+    header{ position: sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: rgba(15,23,42,.6); border-bottom: 1px solid rgba(148,163,184,.15); }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
     .logo{ display:flex; gap:10px; align-items:center; font-weight:700; letter-spacing:.3px; }
-    .logo-mark{ width:36px; height:36px; border-radius:10px; background: conic-gradient(from 220deg, var(--brandA), var(--brandB), var(--brandC)); display:grid; place-items:center; box-shadow: 0 10px 30px rgba(124,179,66,.25); }
+    .logo-mark{ width:36px; height:36px; border-radius:10px; background: conic-gradient(from 220deg, var(--brandA), var(--brandB), var(--brandC)); display:grid; place-items:center; box-shadow: 0 10px 30px rgba(167,139,250,.25); }
     .logo-mark span{ filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
     .nav a.btn{ padding:.6rem 1rem; border-radius:12px; background:linear-gradient(135deg, var(--brandA), var(--brandB)); color:#0b1020; font-weight:700; box-shadow: 0 8px 24px rgba(167,139,250,.35); }
 
@@ -52,34 +51,32 @@
     .lead{ font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--muted); }
 
     /* Illustration card */
-    .art{ background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75)); border:1px solid rgba(95,107,99,.20); border-radius:20px; padding:18px; box-shadow:0 20px 50px rgba(0,0,0,.08); }
+    .art{ background: linear-gradient(180deg, rgba(17,24,39,.7), rgba(17,24,39,.4)); border:1px solid rgba(148,163,184,.18); border-radius:20px; padding:18px; box-shadow:0 20px 50px rgba(0,0,0,.35); }
     .art figcaption{ color: var(--muted); font-size:.9rem; margin-top:10px; }
 
     /* Sections */
     section{ padding: 60px 0; }
-    .card{ background: var(--card); border:1px solid rgba(95,107,99,.20); border-radius:22px; padding:28px; box-shadow:0 16px 40px rgba(0,0,0,.06); }
+    .card{ background: rgba(17,24,39,.7); border:1px solid rgba(148,163,184,.18); border-radius:22px; padding:28px; box-shadow:0 16px 40px rgba(0,0,0,.35); }
     .grid{ display:grid; gap:22px; }
     .cols-2{ grid-template-columns:1fr 1fr; }
     @media (max-width: 860px){ .cols-2{ grid-template-columns:1fr; } }
 
     .badge{ display:inline-flex; gap:8px; align-items:center; padding:.35rem .6rem; border-radius:999px; background: rgba(52,211,153,.12); color:#A7F3D0; border:1px solid rgba(52,211,153,.35); font-size:.85rem; }
-    .feature{ display:flex; gap:14px; align-items:flex-start; background: rgba(124,179,66,.06); border:1px solid rgba(95,107,99,.18); padding:16px; border-radius:16px; }
+    .feature{ display:flex; gap:14px; align-items:flex-start; background: rgba(2,6,23,.35); border:1px solid rgba(148,163,184,.14); padding:16px; border-radius:16px; }
 
     /* Testimonial */
     blockquote{ margin:0; padding:0; border-left:4px solid var(--brandA); padding-left:16px; color:#e9e9ff; }
 
     /* Discussion */
     form#discussion{ display:grid; gap:12px; margin-top:14px; }
-    textarea, input, button{
-      padding:12px 16px; border-radius:12px; border:0; font-weight:700; cursor:pointer; background: linear-gradient(135deg, var(--brandA), var(--brandB)); color:#0b1020; box-shadow:0 10px 28px rgba(124,179,66,.28);
-    }
+    textarea, input, button{ font: inherit; }
     textarea, input[type="text"], input[type="email"]{
-      padding:12px 14px; border-radius:12px; border:1px solid rgba(95,107,99,.35); background:#ffffff; color:var(--text);
+      padding:12px 14px; border-radius:12px; border:1px solid rgba(148,163,184,.25); background:#0b1020; color:var(--text);
     }
     button{
       padding:12px 16px; border-radius:12px; border:0; font-weight:700; cursor:pointer; background: linear-gradient(135deg, var(--brandA), var(--brandC)); color:#0b1020; box-shadow:0 10px 28px rgba(34,211,238,.35);
     }
-    .comment{ background:rgba(124,179,66,.06); border:1px solid rgba(95,107,99,.18); padding:14px; border-radius:14px; }
+    .comment{ background:rgba(2,6,23,.4); border:1px solid rgba(148,163,184,.18); padding:14px; border-radius:14px; }
 
     footer{ padding:40px 0; color: var(--muted); border-top:1px solid rgba(148,163,184,.15); margin-top:40px; }
     .small{ font-size:.9rem; }
